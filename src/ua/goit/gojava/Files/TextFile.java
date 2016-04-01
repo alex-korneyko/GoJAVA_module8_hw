@@ -5,17 +5,21 @@ import java.util.Date;
 /**
  * Class {@code TextFile} inherited from class {@code File}
  * and may contain only text-data
- * @version 1.0 09.03.2016
+ * @version 2.0 01.04.2016
  * @author Alex Korneyko
  */
 public class TextFile extends File {
 
-    private String textCodePage;
+    private String textCodePage;                        //Кодировка
+
+    public TextFile(String textCodePage) {
+        this.textCodePage = textCodePage;
+    }
 
     public TextFile(String fileName, int fileSize, Date createFileDate, boolean readOnly,
-                    boolean hidden, String parentDirectory, String textCodePage) {
+                    boolean hidden, String textCodePage) {
 
-        super(fileName, fileSize, createFileDate, readOnly, hidden, parentDirectory);
+        super(fileName, fileSize, createFileDate, readOnly, hidden);
         this.textCodePage = textCodePage;
     }
 
@@ -33,7 +37,6 @@ public class TextFile extends File {
     @Override
     public String toString() {
         return super.toString() + "fileType= text " +
-                "textCodePage='" + textCodePage + '\'' +
-                '}';
+                "textCodePage='" + textCodePage + '\'';
     }
 }

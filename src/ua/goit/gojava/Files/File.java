@@ -1,29 +1,30 @@
 package ua.goit.gojava.Files;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * Class {@code File} is super-class for all files
- * @version 1.0 09.03.2016
+ * @version 2.0 01.04.2016
  * @author Alex Korneyko
  */
 public abstract class File {
 
-    private String fileName;
-    private int fileSize;
-    private Date createFileDate;
-    private boolean readOnly;
-    private boolean hidden;
-    private String parentDirectory;
+    private String fileName;            //имя файла
+    private int fileSize;               //размер файла
+    private Date createFileDate;        //дата создания
+    private boolean readOnly;           //флаг "только для чтения"
+    private boolean hidden;             //флаг "скрытый"
 
-    public File(String fileName, int fileSize, Date createFileDate, boolean readOnly,
-                boolean hidden, String parentDirectory) {
+
+    public File() {}
+
+    public File(String fileName, int fileSize, Date createFileDate, boolean readOnly, boolean hidden) {
         this.fileName = fileName;
         this.fileSize = fileSize;
         this.createFileDate = createFileDate;
         this.readOnly = readOnly;
         this.hidden = hidden;
-        this.parentDirectory = parentDirectory;
     }
 
     public String getFileName() {
@@ -70,23 +71,14 @@ public abstract class File {
         this.hidden = hidden;
     }
 
-    public String getParentDirectory() {
-        return parentDirectory;
-    }
-
-    public void setParentDirectory(String parentDirectory) {
-        this.parentDirectory = parentDirectory;
-    }
-
     @Override
     public String toString() {
-        return "File{" +
-                "fileName='" + fileName + '\'' +
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yy HH:mm:ss");
+        return "fileName='" + fileName + '\'' +
                 ", fileSize=" + fileSize +
-                ", createFileDate=" + createFileDate +
+                ", createFileDate=" + dateFormat.format(createFileDate) +
                 ", readOnly=" + readOnly +
-                ", hidden=" + hidden +
-                '}';
+                ", hidden=" + hidden + ", ";
     }
 
 

@@ -5,17 +5,21 @@ import java.util.Date;
 /**
  * Class {@code ImageFile} inherited from class {@code File}
  * and may contain only image-data
- * @version 1.0 09.03.2016
+ * @version 2.0 01.03.2016
  * @author Alex Korneyko
  */
 public class ImageFile extends File {
 
-    private String imageFileFormat;
+    private String imageFileFormat;                     //Формат изображения
+
+    public ImageFile(String imageFileFormat) {
+        this.imageFileFormat = imageFileFormat;
+    }
 
     public ImageFile(String fileName, int fileSize, Date createFileDate, boolean readOnly,
-                     boolean hidden, String parentDirectory, String imageFileFormat) {
+                     boolean hidden, String imageFileFormat) {
 
-        super(fileName, fileSize, createFileDate, readOnly, hidden, parentDirectory);
+        super(fileName, fileSize, createFileDate, readOnly, hidden);
         this.imageFileFormat = imageFileFormat;
     }
 
@@ -33,7 +37,6 @@ public class ImageFile extends File {
     @Override
     public String toString() {
         return super.toString() + "fileType= image " +
-                "imageFileFormat='" + imageFileFormat + '\'' +
-                '}';
+                "imageFileFormat='" + imageFileFormat + '\'';
     }
 }

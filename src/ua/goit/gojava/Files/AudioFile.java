@@ -5,17 +5,21 @@ import java.util.Date;
 /**
  * Class {@code AudioFile} inherited from class {@code File}
  * and may contain only audio-data
- * @version 1.0 09.03.2016
+ * @version 2.0 01.04.2016
  * @author Alex Korneyko
  */
 public class AudioFile extends File {
 
-    private String audioFormat;
+    private String audioFormat;                         //Формат аудио
+
+    public AudioFile(String audioFormat){
+        this.audioFormat = audioFormat;
+    }
 
     public AudioFile(String fileName, int fileSize, Date createFileDate, boolean readOnly,
-                     boolean hidden, String parentDirectory, String audioFormat) {
+                     boolean hidden, String audioFormat) {
 
-        super(fileName, fileSize, createFileDate, readOnly, hidden, parentDirectory);
+        super(fileName, fileSize, createFileDate, readOnly, hidden);
         this.audioFormat = audioFormat;
     }
 
@@ -33,7 +37,6 @@ public class AudioFile extends File {
     @Override
     public String toString() {
         return super.toString() + "fileType= audio " +
-                "audioFormat='" + audioFormat + '\'' +
-                '}';
+                "audioFormat='" + audioFormat + '\'';
     }
 }
