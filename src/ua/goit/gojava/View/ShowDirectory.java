@@ -1,6 +1,6 @@
 package ua.goit.gojava.View;
 
-import ua.goit.gojava.Files.*;
+import ua.goit.gojava.Model.*;
 
 import java.text.SimpleDateFormat;
 
@@ -20,10 +20,14 @@ public class ShowDirectory {
 
         System.out.println(directory + "\n");
 
+        String allFilesString = "";
+
         for (File file : directory.files) {
-            System.out.println(file);
+            allFilesString += file + "\n";
         }
-        System.out.println("Done!\n");
+        System.out.println(allFilesString);
+
+
     }
 
     /**

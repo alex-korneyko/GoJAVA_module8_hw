@@ -1,4 +1,4 @@
-package ua.goit.gojava.Files;
+package ua.goit.gojava.Model;
 
 import java.util.Date;
 
@@ -36,7 +36,7 @@ public class ImageFile extends File {
 
     @Override
     public String toString() {
-        return super.toString() + "fileType= image " +
+        return super.toString() + "fileType=image " +
                 "imageFileFormat='" + imageFileFormat + '\'';
     }
 }

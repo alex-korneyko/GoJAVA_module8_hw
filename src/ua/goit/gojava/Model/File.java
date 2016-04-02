@@ -1,4 +1,4 @@
-package ua.goit.gojava.Files;
+package ua.goit.gojava.Model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
